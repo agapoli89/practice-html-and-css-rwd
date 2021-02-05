@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+        "picture"
+        "text"
+        "video";
+}
+
 .p, .t, .v {
     border: 3px solid transparent;
     min-height: 50px;
@@ -14,13 +24,16 @@
 }
 
 .p {
-    border-color: #ffffba
+    border-color: #ffffba;
+    grid-area: picture;
 }
 
 .t {
     border-color: #ffdfba;
+    grid-area: text;
 }
 
 .v {
     border-color: #baffc9;
+    grid-area: video;
 }
