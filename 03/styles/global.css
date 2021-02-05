@@ -6,8 +6,9 @@
 
 body {
     display: grid;
+    height: 100vh;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: auto auto auto;
     grid-template-areas: 
         "picture"
         "text"
@@ -36,4 +37,12 @@ body {
 .v {
     border-color: #baffc9;
     grid-area: video;
+}
+
+.p__picture {
+    background-image: url('../assets/picture.png');
+    width: 100vw;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
