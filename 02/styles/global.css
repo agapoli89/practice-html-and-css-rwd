@@ -4,6 +4,19 @@
     box-sizing: border-box;
 }
 
+body {
+    margin-left: auto;
+    margin-right: auto;
+    height: 150vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 50vh);
+    grid-template-areas: 
+        "a"
+        "b"
+        "c";
+}
+
 .a, .b, .c {
     border: 3px solid transparent;
     min-height: 50px;
@@ -14,13 +27,28 @@
 }
 
 .a {
-    border-color: #ffffba
+    border-color: #ffffba;
+    grid-area: a;
 }
 
 .b {
     border-color: #ffdfba;
+    grid-area: b;
 }
 
 .c {
     border-color: #baffc9;
+    grid-area: c;
+}
+
+@media (min-width: 601px) {
+    body {
+        height: 100vh;
+        max-width: 1200px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 50vh);
+        grid-template-areas: 
+        "a a"
+        "c b";
+    }
 }
